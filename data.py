@@ -1,18 +1,25 @@
+import requests
 
 
-question_data = [
-    {"text": "A slug's blood is green.", "answer": "T"},
-    {"text": "The loudest animal is the African Elephant.", "answer": "F"},
-    {"text": "Approximately one quarter of human bones are in the feet.", "answer": "T"},
-    {"text": "The total surface area of a human lungs is the size of a football pitch.", "answer": "T"},
-    {"text": "In West Virginia, USA, if you accidentally hit an animal with your car,"
-             " you are free to take it home to eat.", "answer": "T"},
-    {"text": "In London, UK, if you happen to die in the House of Parliament, you are entitled to a state funeral.",
-     "answer": "F"},
-    {"text": "It is illegal to pee in the Ocean in Portugal.", "answer": "T"},
-    {"text": "You can lead a cow down stairs but not up stairs.", "answer": "F"},
-    {"text": "Google was originally called 'Back rub'.", "answer": "T"},
-    {"text": "Buzz Aldrin's mother's maiden name was 'Moon'.", "answer": "T"},
-    {"text": "No piece of square dry paper can be folded in half more than 7 times.", "answer": "F"},
-    {"text": "A few ounces of chocolate can to kill a small dog.", "answer": "T"}
-]
+def fetch_trivia_data(amount=10, difficulty='easy', question_type='boolean'):
+    url = f'https://opentdb.com/api.php?amount={amount}&difficulty={difficulty}&type={question_type}'
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(f'A problem occurred when trying to fetch the data. Status Code: {response.status_code}')
+        return None
+
+
+trivia_data = fetch_trivia_data()
+
+question_data = []
+
+if trivia_data:
+    print(f"text: {trivia_data['results'][0]['question']}\nanswer: {trivia_data['results'][0]['correct_answer']}")
+    for result in trivia_data['results']:
+        question_data.append({"text": result['question'], "answer": result['correct_answer'].lower()})
+
+print(question_data)
+

@@ -11,12 +11,11 @@ class Quiz:
     def next_question(self):
         current_question = self.question_list[self.question_number]
         self.question_number += 1
-        response = (input(f"Q.{self.question_number}: {current_question.text} Enter 'T' for True or 'F' for False:\n")
-                    .lower())
+        response = (input(f"Q.{self.question_number}: {current_question.text} Enter 'T' for True or 'F' for False:\n"))
         self.check_answer(response, current_question.answer)
 
     def check_answer(self, response, answer):
-        if response == answer.lower():
+        if response.lower() == answer[0].lower():
             self.score += 1
             print(f"You got it! Current score: {self.score}/{self.question_number}")
         else:
