@@ -8,9 +8,6 @@ for question in question_data:
     question_bank.append(Question(question_text=question["text"],
                                   question_answer=question["answer"]))
 
-# for question in question_bank:
-#     question.__str__()
-
 quiz = Quiz(question_bank)
 
 while quiz.has_questions():
