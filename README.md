@@ -1,6 +1,6 @@
 # Trivia Quiz Program
 
-This Python program is a simple trivia quiz game that fetches trivia questions from the Open Trivia Database API, presents them to the user, and evaluates their responses. The program is structured into several components:
+This Python program is a simple trivia quiz game that fetches trivia questions from the Open Trivia Database API, presents them to the user, and evaluates their responses.
 
 ## Usage
 
