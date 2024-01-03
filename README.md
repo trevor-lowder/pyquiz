@@ -18,22 +18,22 @@ for question in question_data:
 
 ### Create a `Quiz` object with the question bank:
 
-    ```python
-    quiz = Quiz(question_bank)
-    ```
+```python
+quiz = Quiz(question_bank)
+```
 
 ### Start the quiz loop:
 
-    ```python
-    while quiz.has_questions():
-        quiz.next_question()
-    ```
+```python
+while quiz.has_questions():
+    quiz.next_question()
+```
 
 ### Finish the game and display the final score:
 
-    ```python
-    quiz.finish_game()
-    ```
+```python
+quiz.finish_game()
+```
 
 ## Fetching Trivia Data
 
