@@ -8,13 +8,13 @@ Here's how the game works:
 
 ### Initialize a list to store trivia questions:
 
-    ```python
-    question_bank = []
+```
+question_bank = []
 
-    for question in question_data:
-        question_bank.append(Question(question_text=question["text"],
-                                      question_answer=question["answer"]))
-    ```
+for question in question_data:
+    question_bank.append(Question(question_text=question["text"],
+                                  question_answer=question["answer"]))
+```
 
 ### Create a `Quiz` object with the question bank:
 
