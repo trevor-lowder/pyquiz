@@ -8,7 +8,7 @@ Here's how the game works:
 
 ### Initialize a list to store trivia questions:
 
-```
+```python
 question_bank = []
 
 for question in question_data:
